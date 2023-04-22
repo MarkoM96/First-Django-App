@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+ 
+{% block title %} 
+    My Blog 
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href=" {% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock  %}
+
+{% block content %}
+    
+    <section id="welcome">
+        <header>
+            <img
+                src="{% static "blog/images/sijalica.webp" %}" alt="Marko - autor ovog bloga." />
+            <h2>TODAYS BLOG...</h2>
+        </header>
+        <p>Hello everyone, this is my new blog, feel free to share your thoughts.</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>Latest posts</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, beatae optio? Veniam, est molestiae? Quisquam ex a, 
+            culpa libero aut necessitatibus praesentium dolor officiis tempore magnam quia sapiente laudantium distinctio.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam modi, reprehenderit deserunt praesentium tempore nobis 
+            cumque quibusdam facere ducimus! Harum sapiente fugit dignissimos autem! Veritatis rerum consequuntur expedita tempore assumenda.
+        </p>
+
+    </section>
+{% endblock %}
