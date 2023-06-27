@@ -53,7 +53,7 @@ class SinglePostView(View):
 
 
         if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
+            comment = comment_form.save(commit=False) #commit-false znaci da polja koja smo izbacili, budu vracena u model
             comment.post = post
             comment.save()
 
